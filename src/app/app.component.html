@@ -1,3 +1,21 @@
 <h1>
   {{title}}
 </h1>
+
+Url Request: <input type="text" [(ngModel)]="url"><br>
+Header: <input type="text" placeholder="Header name" [(ngModel)]="nameHeader"> <input type="text" placeholder="Header content" [(ngModel)]="contentHeader">
+<br>
+Methods:
+<select [(ngModel)]="methodM">
+  <option *ngFor="let method of methods" value="{{method}}" >{{method}}</option>
+</select>
+<br>
+Json object to send:
+<br>
+<textarea style="background-color:white;color:black;overflow: scroll;" [(ngModel)]='jsonInput' rows="15" cols="60">
+</textarea>
+<br>
+<button (click)="sendRequest()">Send</button>
+<br>
+Result:<br>
+{{result}}
